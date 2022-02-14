@@ -8,7 +8,8 @@ services:
     environment:
       - "ASPNETCORE_ENVIRONMENT=Development"
       - "Logging__Console__FormatterName=Simple"
-      - "ConnectionStrings__DefaultConnection=User ID=postgres;Password=password;Host=host.docker.internal;Port=5432;Database=Product;Pooling=true;Connection Lifetime=0"
+      - "ConnectionStrings__DefaultConnection=User ID=postgres;Password=password;Host=host.docker.internal;Port=5432;Database=Inventory;Pooling=true;Connection Lifetime=0"
+      - "PORT=5000"
     ports:
       - "5000:5000"
 #      - "5001:5001"

@@ -13,32 +13,28 @@ public class Program
         {
             var services = scope.ServiceProvider;
 
-            var environment = services.GetRequiredService<IWebHostEnvironment>();
-            if (environment.IsDevelopment())
+            try
             {
-                try
+                var context = services.GetRequiredService<ApplicationDbContext>();
+
+                if (context.Database.IsNpgsql())
                 {
-                    var context = services.GetRequiredService<ApplicationDbContext>();
-
-                    if (context.Database.IsNpgsql())
-                    {
-                        await context.Database.MigrateAsync();
-                    }
-                
-                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
-
-                    logger.LogInformation("Successfully migrated database");
-                
-                    await ApplicationDbContextSeed.SeedSampleDataAsync(context);
+                    await context.Database.MigrateAsync();
                 }
-                catch (Exception ex)
-                {
-                    var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
+            
+                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
 
-                    logger.LogError(ex, "An error occurred while migrating or seeding the database");
+                logger.LogInformation("Successfully migrated database");
+            
+                await ApplicationDbContextSeed.SeedSampleDataAsync(context);
+            }
+            catch (Exception ex)
+            {
+                var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
 
-                    throw;
-                }
+                logger.LogError(ex, "An error occurred while migrating or seeding the database");
+
+                throw;
             }
         }
 
