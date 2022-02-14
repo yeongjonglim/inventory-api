@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using InventoryAPI.Application.Common.Interfaces;
+using InventoryAPI.Application.Extensions;
 using InventoryAPI.Infrastructure.Models;
 using InventoryAPI.Infrastructure.Persistence;
 using InventoryAPI.Infrastructure.Services;
@@ -16,7 +17,8 @@ public static class DependencyInjection
     {
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(
-                configuration.GetConnectionString("DefaultConnection"),
+                EnvironmentExtensions.GetDatabaseUrl("DATABASE_URL",
+                    configuration.GetConnectionString("DefaultConnection")),
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
         services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
