@@ -18,7 +18,10 @@ public static class EnvironmentExtensions
 
             var password = uri.UserInfo.Split(':')[1];
 
-            connectionString = "; Database=" + uri.AbsolutePath[1..] +
+            var host = uri.Host;
+
+            connectionString = "Host=" + host + 
+                               "; Database=" + uri.AbsolutePath[1..] +
                                "; Username=" + username +
                                "; Password=" + password +
                                "; Port=" + uri.Port +
