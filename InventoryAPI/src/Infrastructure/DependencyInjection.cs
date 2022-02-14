@@ -1,6 +1,7 @@
 ﻿using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using InventoryAPI.Application.Common.Interfaces;
+using InventoryAPI.Infrastructure.Models;
 using InventoryAPI.Infrastructure.Persistence;
 using InventoryAPI.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -49,7 +50,6 @@ public static class DependencyInjection
                     ValidateLifetime = true,
                     ValidAudience = jwtConfiguration.Audience,
                     ValidIssuer = jwtConfiguration.Issuer
-                    // IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfiguration.Key))
                 };
             });
 
@@ -58,12 +58,4 @@ public static class DependencyInjection
 
         return services;
     }
-}
-
-public class JwtConfiguration
-{
-    public string Key { get; set; } = null!;
-    public string? Issuer { get; set; }
-    public string? Audience { get; set; }
-    public string Subject { get; set; } = null!;
 }
