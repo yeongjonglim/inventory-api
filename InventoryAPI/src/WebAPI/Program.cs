@@ -56,5 +56,6 @@ public class Program
                             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                         config.AddEnvironmentVariables();
                     })
+                    .UseUrls($"http://*:{Environment.GetEnvironmentVariable("PORT")}")
                     .UseStartup<Startup>());
 }
