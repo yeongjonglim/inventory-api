@@ -50,8 +50,8 @@ public class Program
                     {
                         var env = hostingContext.HostingEnvironment;
                         config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
-                        config.AddEnvironmentVariables();
+                            .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                            .AddEnvironmentVariables();
                     })
                     .UseUrls($"http://*:{EnvironmentExtensions.GetEnvironmentVariable("PORT", "5000")}")
                     .UseStartup<Startup>());
