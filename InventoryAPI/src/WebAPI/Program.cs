@@ -1,3 +1,4 @@
+using InventoryAPI.Application.Extensions;
 using Microsoft.EntityFrameworkCore;
 using InventoryAPI.Infrastructure.Persistence;
 
@@ -52,6 +53,6 @@ public class Program
                             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
                         config.AddEnvironmentVariables();
                     })
-                    .UseUrls($"http://*:{Environment.GetEnvironmentVariable("PORT")}")
+                    .UseUrls($"http://*:{EnvironmentExtensions.GetEnvironmentVariable("PORT", "5000")}")
                     .UseStartup<Startup>());
 }

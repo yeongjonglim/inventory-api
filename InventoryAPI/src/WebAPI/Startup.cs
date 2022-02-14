@@ -58,7 +58,7 @@ public class Startup
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "InventoryAPI", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = Configuration.GetValue<string>("ProjectName"), Version = "v1" });
             c.OperationFilter<CustomAuthenticationFilter>();
             c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
             {
@@ -78,7 +78,11 @@ public class Startup
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "InventoryAPI v1"));
+        app.UseSwaggerUI(c=>
+        {
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", Configuration.GetValue<string>("ProjectName"));
+            c.DocumentTitle = Configuration.GetValue<string>("ProjectName");
+        });
         
         if (env.IsDevelopment())
         {

@@ -1,5 +1,4 @@
-﻿using System.Text;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using InventoryAPI.Application.Common.Interfaces;
 using InventoryAPI.Infrastructure.Models;
 using InventoryAPI.Infrastructure.Persistence;
