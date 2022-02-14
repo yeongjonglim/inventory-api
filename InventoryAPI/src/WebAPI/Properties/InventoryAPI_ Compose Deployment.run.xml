@@ -1,0 +1,13 @@
+<!--not supported in launch settings for rider yet-->
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="InventoryAPI: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
+    <deployment type="docker-compose.yml">
+      <settings>
+        <option name="envFilePath" value="" />
+        <option name="commandLineOptions" value="--build" />
+        <option name="sourceFilePath" value="InventoryAPI/docker-compose.yml" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>

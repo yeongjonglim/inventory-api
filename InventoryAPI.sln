@@ -1,0 +1,69 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{98D8D6BD-267F-461F-A8E0-4E55BA94FCF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{677144CE-8304-4253-8D7A-C1D95AACFA92}"
+	ProjectSection(SolutionItems) = preProject
+		InventoryAPI\docker-compose.dcproj = InventoryAPI\docker-compose.dcproj
+		InventoryAPI\docker-compose.yml = InventoryAPI\docker-compose.yml
+		InventoryAPI\Dockerfile = InventoryAPI\Dockerfile
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "InventoryAPI\src\Domain\Domain.csproj", "{A3B17888-F690-4A56-9B80-46176D5C4DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "InventoryAPI\src\Application\Application.csproj", "{955CDC2B-2BEF-46FB-9C74-D565F604A63A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "InventoryAPI\src\Infrastructure\Infrastructure.csproj", "{73C85D54-0EDD-4675-BF53-8E612C81C8E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "InventoryAPI\src\WebAPI\WebAPI.csproj", "{0A8769FB-5BC2-4F5D-BFAF-E7C21E95F278}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.UnitTests", "InventoryAPI\tests\Domain.UnitTests\Domain.UnitTests.csproj", "{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "InventoryAPI\tests\Application.UnitTests\Application.UnitTests.csproj", "{F17CFD5D-C868-4323-A116-C082DC32D419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.IntegrationTests", "InventoryAPI\tests\Application.IntegrationTests\Application.IntegrationTests.csproj", "{D0CC30CD-8416-4721-B8C5-93B20DBE80C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3B17888-F690-4A56-9B80-46176D5C4DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3B17888-F690-4A56-9B80-46176D5C4DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3B17888-F690-4A56-9B80-46176D5C4DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3B17888-F690-4A56-9B80-46176D5C4DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{955CDC2B-2BEF-46FB-9C74-D565F604A63A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{955CDC2B-2BEF-46FB-9C74-D565F604A63A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{955CDC2B-2BEF-46FB-9C74-D565F604A63A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{955CDC2B-2BEF-46FB-9C74-D565F604A63A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C85D54-0EDD-4675-BF53-8E612C81C8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C85D54-0EDD-4675-BF53-8E612C81C8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C85D54-0EDD-4675-BF53-8E612C81C8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C85D54-0EDD-4675-BF53-8E612C81C8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8769FB-5BC2-4F5D-BFAF-E7C21E95F278}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8769FB-5BC2-4F5D-BFAF-E7C21E95F278}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8769FB-5BC2-4F5D-BFAF-E7C21E95F278}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8769FB-5BC2-4F5D-BFAF-E7C21E95F278}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F17CFD5D-C868-4323-A116-C082DC32D419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F17CFD5D-C868-4323-A116-C082DC32D419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F17CFD5D-C868-4323-A116-C082DC32D419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F17CFD5D-C868-4323-A116-C082DC32D419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CC30CD-8416-4721-B8C5-93B20DBE80C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CC30CD-8416-4721-B8C5-93B20DBE80C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CC30CD-8416-4721-B8C5-93B20DBE80C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CC30CD-8416-4721-B8C5-93B20DBE80C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E7A3165B-72F9-4EA8-AF1F-8F7D44EADEF1} = {98D8D6BD-267F-461F-A8E0-4E55BA94FCF6}
+		{F17CFD5D-C868-4323-A116-C082DC32D419} = {98D8D6BD-267F-461F-A8E0-4E55BA94FCF6}
+		{D0CC30CD-8416-4721-B8C5-93B20DBE80C7} = {98D8D6BD-267F-461F-A8E0-4E55BA94FCF6}
+	EndGlobalSection
+	GlobalSection(RiderSharedRunConfigurations) = postSolution
+		File = InventoryAPI\src\WebAPI\Properties\InventoryAPI_ Compose Deployment.run.xml
+	EndGlobalSection
+EndGlobal
